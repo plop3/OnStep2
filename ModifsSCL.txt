@@ -1,0 +1,30 @@
+Bascule d'une configuration git à une autre:
+--------------------------------------------
+.git_onStep	Configuration git OnStep
+.git_gogs	Configuration git Gogs
+
+
+Arduino MEGA 
+------------
+OnStep.ino 
+Ligne 66 
+#include "DewHeater.h"  //SCL 
+
+Ligne 397 (Timer 1s)
+// Dew Heater SCL 
+ManageDewHeater((trackingState==TrackingMoveTo) || guideDirAxis1 || guideDirAxis2);  
+
+Command.ino
+Lignes 369 et 428
+Modification des pas du focuser:
+(1,10,100,1000) -> (1,100,500,1000) -> (10,100,500,1000)
+
+Fichiers supplémentaires
+------------------------
++ DewHeater.ino 
++ DewHeater.h  
+
+PEC:
+----
+Inversion des PIN PPS et PEC (2 et 57)
+La PIN 57 n'est pas cablée sur les cartes MKS-GEN L
