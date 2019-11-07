@@ -862,7 +862,7 @@ void processCommands() {
               case 'D': dtostrf(ambient.getAltitude(),3,1,reply); quietReply=true; break;            // altitude in meters
               case 'E': dtostrf(ambient.getDewPoint(),3,1,reply); quietReply=true; break;            // dew point in deg. C
               //case 'F': { float t=HAL_MCU_Temperature(); if (t>-999) { dtostrf(t,1,0,reply); quietReply=true; } else commandError=true; } break; // internal MCU temperature in deg. C
-              case 'F': dtostrf(Tmirror,3,1,reply); quietReply=true; break;			// SCL T° miroir
+              case 'F': dtostrf(getTmirror(),3,1,reply); quietReply=true; break;			// SCL T° miroir
 			  default:  commandError=true;
             }
           } else

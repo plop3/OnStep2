@@ -46,6 +46,10 @@ void startDS18B20reading() {
   }
 }
 
+float getTmirror() {
+		return Tmirror;
+}
+
 void CommandDewHeater() {
   byte data[12];
   Tmirror=-100;
