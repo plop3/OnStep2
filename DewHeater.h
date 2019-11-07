@@ -5,3 +5,5 @@
 #define HEAT Aux7         // Heater D9
 #define HEATLEVEL 128   // Level of heating (0..255)
 #define DIFF  2         // T° mirror > dew point + DIFF
+
+float Tmirror;			// T° du miroir

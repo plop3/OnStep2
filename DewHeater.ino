@@ -48,7 +48,7 @@ void startDS18B20reading() {
 
 void CommandDewHeater() {
   byte data[12];
-  float Tmirror=-100;
+  Tmirror=-100;
   if (ds.reset()) {
     ds.write(0xcc);
     ds.write(0xbe);
