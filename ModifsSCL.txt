@@ -34,3 +34,13 @@ PEC:
 ----
 Inversion des PIN PPS et PEC (2 et 57)
 La PIN 57 n'est pas cablée sur les cartes MKS-GEN L
+
+
+Wemos OnStepESPServer:
+----------------------
+Ligne 347 (modification de l'intitulé T° miroir + ajout T° extérieure):
+  if (!sendCommand(":GX9A#",temp1)) strcpy(temp1,"?"); sprintf_P(temp,html_indexTPHD,"Temperature:",temp1,"&deg;C"); data+=temp;+=temp;
+  if (!sendCommand(":GX9F#",temp1)) strcpy(temp1,"?"); sprintf_P(temp,html_indexTPHD,"Mirror Temperature:",temp1,"&deg;C"); data+=temp; 
+  
+  Gestion de l'afficheur OLED:
+  
