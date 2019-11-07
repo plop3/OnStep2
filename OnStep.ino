@@ -74,7 +74,7 @@
 #endif
 
 // ---------------------------------------------------------------------------------------------------
-//#include "DewHeater.h" //SCL
+#include "DewHeater.h" //SCL
 
 #include "src/lib/FPoint.h"
 #include "Globals.h"
@@ -471,7 +471,7 @@ void loop2() {
     housekeepingTimer=tempMs+1000UL;
 
 // Dew Heater SCL                                                                                                                           
-//ManageDewHeater((trackingState==TrackingMoveTo) || guideDirAxis1 || guideDirAxis2);      
+ManageDewHeater((trackingState==TrackingMoveTo) || guideDirAxis1 || guideDirAxis2);      
 
 #if defined(ROTATOR_ON) && defined(MOUNT_TYPE_ALTAZM)
     // calculate and set the derotation rate as required

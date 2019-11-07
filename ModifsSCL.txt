@@ -4,25 +4,31 @@ Bascule d'une configuration git à une autre:
 .git_gogs	Configuration git Gogs
 
 
-Arduino MEGA 
+Arduino MEGA (Release 2.22)
 ------------
 OnStep.ino 
-Ligne 66 
+Ligne 77 
 #include "DewHeater.h"  //SCL 
 
-Ligne 397 (Timer 1s)
+Ligne 473 (Timer 1s)
 // Dew Heater SCL 
 ManageDewHeater((trackingState==TrackingMoveTo) || guideDirAxis1 || guideDirAxis2);  
 
 Command.ino
-Lignes 369 et 428
+Lignes 385 et 466
 Modification des pas du focuser:
 (1,10,100,1000) -> (1,100,500,1000) -> (10,100,500,1000)
+
+AJout de la lecture T° mirroir au lieu de la T° CPU:
+Ligne 864
+              //case 'F': { float t=HAL_MCU_Temperature(); if (t>-999) { dtostrf(t,1,0,reply); quietReply=true; } else commandError=true; } break; // internal MCU temperature in deg. C
+              case 'F': dtostrf(getTmirror(),3,1,reply); quietReply=true; break;			// SCL T° miroir
 
 Fichiers supplémentaires
 ------------------------
 + DewHeater.ino 
 + DewHeater.h  
++ ModifSCL.txt
 
 PEC:
 ----
