@@ -344,7 +344,6 @@ void handleRoot() {
   }
 
 #ifdef INTERNAL_TEMPERATURE_ON
-  if (!sendCommand(":GX9A#",temp1)) strcpy(temp1,"?"); sprintf_P(temp,html_indexTPHD,"Temperature:",temp1,"&deg;C"); data+=temp;+=temp;
   if (!sendCommand(":GX9F#",temp1)) strcpy(temp1,"?"); sprintf_P(temp,html_indexTPHD,"Mirror Temperature:",temp1,"&deg;C"); data+=temp;
 #endif
 
