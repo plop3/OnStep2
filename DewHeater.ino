@@ -39,7 +39,8 @@ void ManageDewHeater(bool slewing) {
 void startDS18B20reading() {
   // Poweroff heater (parasits)
   //analogWrite(HEAT,0);
-  digitalWrite(HEAT,LOW);
+  //digitalWrite(HEAT,LOW);
+  cmdSend(":SXG7,0#",true);
   if (ds.reset()) {
     ds.write(0xcc);
     ds.write(0x44,1);
@@ -72,7 +73,8 @@ void CommandDewHeater() {
   if (Tmirror>-100) {
     if (Tmirror <80 and Tmirror<(Pr+DIFF)) {
       //analogWrite(HEAT,HEATLEVEL);
-      digitalWrite(HEAT,HIGH);
+      //digitalWrite(HEAT,HIGH);
+      cmdSend(":SXG7,255#",true);
     }
   } 
 }
