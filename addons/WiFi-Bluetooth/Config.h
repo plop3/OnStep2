@@ -7,7 +7,7 @@
 
 #define SERIAL_BAUD_DEFAULT 9600   // Default=9600, OnStep's attached Serial port must be run at this baud rate
 
-#define SERIAL_BAUD 57600         // Default=57600, use 19200 for talking to OnStep on a Mega2560
+#define SERIAL_BAUD 19200         // Default=57600, use 19200 for talking to OnStep on a Mega2560
 
 #define LED_PIN_OFF               // Default=_OFF, Flashes LED when trying to connect to OnStep, use LED_PIN D4 for WeMos D1 Mini
 
