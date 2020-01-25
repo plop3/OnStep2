@@ -120,7 +120,7 @@
 
 // ADJUST THE FOLLOWING TO MATCH YOUR MOUNT --------------------------------------------------------------------------------
 #define REMEMBER_SLEW_RATE_OFF       // Set to _ON and OnStep will remember rates set in the ASCOM driver, Android App, etc. default=_OFF.
-#define DesiredBaseSlewRate      3.0 // Desired slew (goto) rate in degrees/second; also adjustable at run-time from 1/2 to 2x this rate.
+#define DesiredBaseSlewRate      5.0 // Desired slew (goto) rate in degrees/second; also adjustable at run-time from 1/2 to 2x this rate.
                                      // The resulting step rate is automatically reduced if too high for the current hardware/settings.
 
 #define DegreesForAcceleration   5.0 // approximate number of degrees for full acceleration or deceleration: higher values=longer acceleration/deceleration
@@ -133,14 +133,14 @@
                                      // for the most part this doesn't need to be changed, but adjust when needed.  Default=25
 
                                      // Axis1 is for RA/Az
-#define StepsPerDegreeAxis1  5120.0 // calculated as    :  stepper_steps * micro_steps * gear_reduction1 * (gear_reduction2/360)
+#define StepsPerDegreeAxis1  10240.0 // calculated as    :  stepper_steps * micro_steps * gear_reduction1 * (gear_reduction2/360)
                                      // G11              :  400           * 32          * 1               *  360/360              = 12800
                                      // Axis2 is for Dec/Alt
-#define StepsPerDegreeAxis2  5120.0 // calculated as    :  stepper_steps * micro_steps * gear_reduction1 * (gear_reduction2/360)
+#define StepsPerDegreeAxis2  10240.0 // calculated as    :  stepper_steps * micro_steps * gear_reduction1 * (gear_reduction2/360)
                                      // G11              :  400           * 32          * 1               *  360/360              = 12800
                                      
                                      // PEC, number of steps for a complete worm rotation (in RA), (StepsPerDegreeAxis1*360)/gear_reduction2.  Ignored on Alt/Azm mounts.
-#define StepsPerWormRotationAxis1 12800L
+#define StepsPerWormRotationAxis1 25600L
                                      // G11              : (12800*360)/360 = 12800
 
 #define PECBufferSize           824  // PEC, buffer size, max should be no more than 3384, your required buffer size >= StepsPerAxis1WormRotation/(StepsPerDegeeAxis1/240)
@@ -216,7 +216,7 @@
 // Pins 26,28 = Step,Dir
 #define FOCUSER1_ON                 // use _ON to enable this focuser, default=_OFF
 #define MaxRateAxis4               2 //8 // this is the minimum number of milli-seconds between steps, default=8.  In DC motor mode PWM frequency.
-#define StepsPerMicrometerAxis4  0.4 // 0.5 // figure this out by testing or other means.
+#define StepsPerMicrometerAxis4   0.4 // 0.5 // figure this out by testing or other means.
 #define MinAxis4               0.0 //-25.0 // minimum allowed position in millimeters, default = -25.0
 #define MaxAxis4               45.0 // 25.0 // maximum allowed position in millimeters, default =  25.0
 #define AXIS4_MIN_MOVE_RATE 10       // minimum micrometers per second, default=10.  In DC motor mode power for slow movement (1-1000 range.)
