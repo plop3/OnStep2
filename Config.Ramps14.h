@@ -227,7 +227,7 @@
 
 // FOCUSER2 ---------------------------------------------------------------------------------------------------------------
 // Pins 36,34 = Step,Dir
-#define FOCUSER2_ON                  // use _ON to enable this focuser, default=_OFF
+#define FOCUSER2_OFF                  // use _ON to enable this focuser, default=_OFF
 #define MaxRateAxis5               2 // this is the minimum number of milli-seconds between steps, default=8.  In DC motor mode PWM frequency.
 #define StepsPerMicrometerAxis5  0.4 // figure this out by testing or other means.
 #define MinAxis5                 0.0 // minimum allowed position in millimeters, default = -25.0
