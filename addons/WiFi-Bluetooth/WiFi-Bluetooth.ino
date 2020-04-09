@@ -88,8 +88,8 @@ bool accessPointEnabled=true;
 bool stationEnabled=true;
 bool stationDhcpEnabled=false;
 
-char wifi_sta_ssid[40]="astro";
-char wifi_sta_pwd[40]="B546546AF0";
+char wifi_sta_ssid[40]="ssid";
+char wifi_sta_pwd[40]="password";
 
 IPAddress wifi_sta_ip = IPAddress(192,168,0,15);
 IPAddress wifi_sta_gw = IPAddress(192,168,0,1);
